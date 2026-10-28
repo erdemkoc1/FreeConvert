@@ -1,0 +1,27 @@
+# Python / PyInstaller build çıktıları (commitlenmez, yerelde üretilir)
+.venv/
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+!FreeConvert.spec
+
+# OpenCode agent/runtime artifacts
+.opencode/
+
+# Roblox - sadece gecici dosyalari yoksay (place dosyalarini KAYDEDER)
+# Gecici / log
+*.log
+*.tmp
+*.backup
+
+# OS / OneDrive
+Thumbs.db
+desktop.ini
+~$*
+
+# Istersen asagidakileri acabilirsin (simdilik kapali):
+# *.rbxl
+# *.rbxlx
+

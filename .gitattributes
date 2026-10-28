@@ -1,0 +1,18 @@
+.gitattributes text eol=lf
+
+# GitHub'ın 100 MB normal dosya sınırını aşan taşınabilir sürümler LFS ile saklanır.
+releases/**/*.exe filter=lfs diff=lfs merge=lfs -text
+# Uygulamanın içine gömülü OCR motoru ve dil verileri de LFS ile saklanır.
+tesseract_runtime/** filter=lfs diff=lfs merge=lfs -text
+tesseract_runtime/tessdata/LICENSE -filter -diff -merge text eol=lf
+
+# Font binary'leri de LFS ile saklanır.
+assets/fonts/*.ttf filter=lfs diff=lfs merge=lfs -text
+assets/fonts/OFL.txt text eol=lf
+
+# Metin ve kaynak dosyalarında satır sonu normalizasyonu yapılmasın.
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.ps1 text eol=crlf
+*.json text eol=lf
