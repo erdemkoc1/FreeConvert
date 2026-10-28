@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 670" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <style>
+    .ink { fill: #0f172a; }
+    .muted { fill: #475569; }
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #f8fafc; }
+      .muted { fill: #94a3b8; }
+    }
+  </style>
+
+  <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700" class="ink">FreeConvert: hangi dönüşümler yapılabilir</text>
+  <text x="380" y="58" text-anchor="middle" font-size="13" class="muted">Girdi solda, çıktı sağda. Numaralar aşağıdaki listeye karşılık gelir.</text>
+
+  <g transform="translate(0,40)">
+    <!-- Edges -->
+    <g stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)" fill="none">
+      <line x1="220" y1="100" x2="538" y2="60"/>
+      <line x1="220" y1="230" x2="538" y2="150"/>
+      <line x1="220" y1="230" x2="538" y2="240"/>
+      <line x1="220" y1="230" x2="538" y2="330"/>
+      <line x1="220" y1="360" x2="538" y2="330"/>
+      <line x1="220" y1="360" x2="538" y2="60"/>
+      <line x1="220" y1="360" x2="538" y2="420"/>
+    </g>
+
+    <!-- Input nodes -->
+    <rect x="40" y="72" width="180" height="56" rx="10" fill="#2563eb"/>
+    <text x="130" y="106" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Word (.docx)</text>
+
+    <rect x="40" y="202" width="180" height="56" rx="10" fill="#2563eb"/>
+    <text x="130" y="236" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">PDF</text>
+    <circle cx="100" cy="278" r="11" fill="#f59e0b"/>
+    <text x="100" y="278" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#0f172a">8</text>
+    <text x="118" y="278" dominant-baseline="central" font-size="12" class="muted">birleştir (çoklu PDF)</text>
+
+    <rect x="40" y="332" width="180" height="56" rx="10" fill="#16a34a"/>
+    <text x="130" y="366" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Görsel (PNG / JPG)</text>
+
+    <!-- Output nodes -->
+    <rect x="540" y="35" width="180" height="50" rx="10" fill="#334155"/>
+    <text x="630" y="65" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">PDF</text>
+
+    <rect x="540" y="125" width="180" height="50" rx="10" fill="#334155"/>
+    <text x="630" y="155" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Word (.docx)</text>
+
+    <rect x="540" y="215" width="180" height="50" rx="10" fill="#334155"/>
+    <text x="630" y="245" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Metin (.txt)</text>
+
+    <rect x="540" y="305" width="180" height="50" rx="10" fill="#334155"/>
+    <text x="630" y="335" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">PNG / JPG</text>
+
+    <rect x="540" y="395" width="180" height="50" rx="10" fill="#334155"/>
+    <text x="630" y="425" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Metin (OCR)</text>
+
+    <!-- Edge number badges -->
+    <g font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="central">
+      <circle cx="380" cy="80" r="12" fill="#f59e0b"/><text x="380" y="80" fill="#0f172a">1</text>
+      <circle cx="316" cy="206" r="12" fill="#f59e0b"/><text x="316" y="206" fill="#0f172a">2</text>
+      <circle cx="444" cy="237" r="12" fill="#f59e0b"/><text x="444" y="237" fill="#0f172a">3</text>
+      <circle cx="380" cy="280" r="12" fill="#f59e0b"/><text x="380" y="280" fill="#0f172a">4</text>
+      <circle cx="380" cy="345" r="12" fill="#f59e0b"/><text x="380" y="345" fill="#0f172a">5</text>
+      <circle cx="380" cy="210" r="12" fill="#f59e0b"/><text x="380" y="210" fill="#0f172a">6</text>
+      <circle cx="380" cy="390" r="12" fill="#f59e0b"/><text x="380" y="390" fill="#0f172a">7</text>
+    </g>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="14" class="ink">
+    <g font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="#0f172a">
+      <circle cx="56" cy="560" r="11" fill="#f59e0b"/><text x="56" y="560">1</text>
+      <circle cx="56" cy="592" r="11" fill="#f59e0b"/><text x="56" y="592">2</text>
+      <circle cx="56" cy="624" r="11" fill="#f59e0b"/><text x="56" y="624">3</text>
+      <circle cx="56" cy="656" r="11" fill="#f59e0b"/><text x="56" y="656">4</text>
+      <circle cx="416" cy="560" r="11" fill="#f59e0b"/><text x="416" y="560">5</text>
+      <circle cx="416" cy="592" r="11" fill="#f59e0b"/><text x="416" y="592">6</text>
+      <circle cx="416" cy="624" r="11" fill="#f59e0b"/><text x="416" y="624">7</text>
+      <circle cx="416" cy="656" r="11" fill="#f59e0b"/><text x="416" y="656">8</text>
+    </g>
+    <text x="76" y="560" dominant-baseline="central">Word (.docx) → PDF</text>
+    <text x="76" y="592" dominant-baseline="central">PDF → Word (.docx)</text>
+    <text x="76" y="624" dominant-baseline="central">PDF → Metin (.txt)</text>
+    <text x="76" y="656" dominant-baseline="central">PDF → Görseller (sayfa sayfa)</text>
+    <text x="436" y="560" dominant-baseline="central">Görsel → Görsel (PNG ↔ JPG)</text>
+    <text x="436" y="592" dominant-baseline="central">Görseller → PDF (birleştir)</text>
+    <text x="436" y="624" dominant-baseline="central">Görsel → Metin (OCR)</text>
+    <text x="436" y="656" dominant-baseline="central">PDF → PDF (birleştir)</text>
+  </g>
+</svg>
