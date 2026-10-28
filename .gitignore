@@ -6,6 +6,7 @@ build/
 dist/
 *.spec
 !FreeConvert.spec
+!Uninstall.spec
 
 # OpenCode agent/runtime artifacts
 .opencode/

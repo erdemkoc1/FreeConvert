@@ -11,6 +11,7 @@ TESSERACT_RUNTIME = os.path.join(ROOT, "tesseract_runtime")
 datas = [
     (TESSERACT_RUNTIME, "tesseract_runtime"),
     (os.path.join(ROOT, "assets", "fonts"), "assets/fonts"),
+    (os.path.join(ROOT, "assets", "icon"), "assets/icon"),
     (os.path.join(ROOT, "THIRD_PARTY_NOTICES.md"), "."),
     (os.path.join(ROOT, "LICENSE"), "."),
 ]
@@ -54,6 +55,7 @@ exe = EXE(
     upx_exclude=[],
     runtime_tmpdir=None,
     console=False,
+    icon=os.path.join(ROOT, "assets", "icon", "freeconvert.ico"),
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,

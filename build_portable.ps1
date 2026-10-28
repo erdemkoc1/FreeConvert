@@ -95,6 +95,15 @@ if (-not (Test-Path -LiteralPath $output -PathType Leaf)) {
     throw "Portable output was not created: $output"
 }
 
+$uninstallSpec = Join-Path $projectRoot "Uninstall.spec"
+Invoke-Native $python @(
+    "-m", "PyInstaller", "--noconfirm", "--clean", $uninstallSpec
+)
+$uninstaller = Join-Path $projectRoot "dist\uninstall.exe"
+if (-not (Test-Path -LiteralPath $uninstaller -PathType Leaf)) {
+    throw "Uninstaller was not created: $uninstaller"
+}
+
 Invoke-Native $python @(
     (Join-Path $projectRoot "tools\verify_portable.py"), $output
 )

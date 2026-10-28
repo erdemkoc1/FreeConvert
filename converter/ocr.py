@@ -17,6 +17,9 @@ import tempfile
 
 from converter._common import find_tesseract, tessdata_dir
 
+# Windows'ta tesseract.exe çağrılırken konsol penceresi açılmasın.
+_NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+
 
 def tesseract_available() -> bool:
     """Gömülü OCR motorunu gerçekten çalıştırıp tur/eng dillerini doğrular."""
@@ -28,7 +31,7 @@ def tesseract_available() -> bool:
         result = subprocess.run(
             [tess, "--tessdata-dir", td, "--list-langs"],
             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-            timeout=15, check=False)
+            timeout=15, check=False, creationflags=_NO_WINDOW)
         if result.returncode != 0:
             return False
         languages = result.stdout.decode("utf-8", errors="replace").lower()
@@ -52,7 +55,8 @@ def ocr_image_to_text(image_path: str) -> tuple[bool, str]:
                 cmd += ["-l", lang]
             r = subprocess.run(cmd, stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE,
-                               timeout=180, check=False)
+                               timeout=180, check=False,
+                               creationflags=_NO_WINDOW)
             if r.returncode == 0:
                 return True, r.stdout.decode("utf-8",
                                              errors="replace").strip()
@@ -83,7 +87,7 @@ def ocr_image_to_words(image_path: str) -> tuple[bool, list[tuple]]:
                         "-c", "tessedit_create_tsv=1"]
                 result = subprocess.run(
                     cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                    timeout=180, check=False)
+                    timeout=180, check=False, creationflags=_NO_WINDOW)
                 if result.returncode != 0:
                     continue
                 succeeded = True

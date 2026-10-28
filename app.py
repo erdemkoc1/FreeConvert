@@ -229,6 +229,99 @@ S = {
 }
 
 
+def _set_app_user_model_id() -> None:
+    """Görev çubuğunda Python yerine FreeConvert simgesinin gözükmesini sağlar."""
+    if os.name != "nt":
+        return
+    try:
+        import ctypes
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
+            "FreeConvert.App")
+    except Exception:
+        pass
+
+
+def _apply_window_icon(window: tk.Tk) -> None:
+    """Pencere başlığı ve görev çubuğu için logo; exe içindeki .ico kullanılır."""
+    base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+    ico = os.path.join(base, "assets", "icon", "freeconvert.ico")
+    try:
+        if os.name == "nt" and os.path.isfile(ico):
+            window.iconbitmap(default=ico)
+            window.after_idle(_set_native_icons, window, ico)
+            return
+        png = os.path.join(base, "assets", "icon", "freeconvert_1024.png")
+        if os.path.isfile(png):
+            window.iconphoto(True, tk.PhotoImage(file=png))
+    except Exception:
+        pass
+
+
+def _set_native_icons(window: tk.Tk, ico: str) -> None:
+    """Tk yalnızca 32 px ikon verir; görev çubuğu için 256 px kareyi doğrudan yükler."""
+    try:
+        import ctypes
+        user32 = ctypes.windll.user32
+        user32.LoadImageW.restype = ctypes.c_void_p
+        user32.LoadImageW.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p,
+                                      ctypes.c_uint, ctypes.c_int,
+                                      ctypes.c_int, ctypes.c_uint]
+        user32.SendMessageW.argtypes = [ctypes.c_void_p, ctypes.c_uint,
+                                        ctypes.c_void_p, ctypes.c_void_p]
+        image_icon, load_from_file = 1, 0x10
+        wm_seticon, icon_small, icon_big = 0x80, 0, 1
+        hwnd = user32.GetParent(window.winfo_id()) or window.winfo_id()
+        big = user32.LoadImageW(None, ico, image_icon, 256, 256, load_from_file)
+        small = user32.LoadImageW(None, ico, image_icon, 32, 32, load_from_file)
+        if big:
+            user32.SendMessageW(hwnd, wm_seticon, icon_big, big)
+        if small:
+            user32.SendMessageW(hwnd, wm_seticon, icon_small, small)
+    except Exception:
+        pass
+
+
+def _ensure_start_menu_shortcut() -> None:
+    """Windows Arama'da bulunsun diye Başlat menüsü kısayolunu yeniden yazar.
+
+    Yalnızca paketlenmiş exe'de ve Windows'ta çalışır. Arka planda yapılır,
+    açılışı geciktirmez.
+    """
+    if os.name != "nt" or not getattr(sys, "frozen", False):
+        return
+    appdata = os.environ.get("APPDATA")
+    if not appdata:
+        return
+    exe = os.path.abspath(sys.executable)
+    link = os.path.join(appdata, "Microsoft", "Windows", "Start Menu",
+                        "Programs", "FreeConvert.lnk")
+
+    def _quote(value: str) -> str:
+        return value.replace("'", "''")
+
+    script = (
+        f"$s = (New-Object -ComObject WScript.Shell).CreateShortcut('{_quote(link)}');"
+        f"$s.TargetPath = '{_quote(exe)}';"
+        f"$s.WorkingDirectory = '{_quote(os.path.dirname(exe))}';"
+        f"$s.IconLocation = '{_quote(exe)},0';"
+        "$s.Description = 'FreeConvert';"
+        "$s.Save()"
+    )
+
+    def _write() -> None:
+        try:
+            subprocess.run(
+                ["powershell", "-NoProfile", "-NonInteractive",
+                 "-Command", script],
+                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+                timeout=60, check=False)
+        except Exception:
+            pass
+
+    threading.Thread(target=_write, daemon=True).start()
+
+
 class ToolTip:
     """Basit tooltip: imleç üzerine gelince açıklama gösterir."""
 
@@ -290,6 +383,7 @@ except Exception:
 class App(_Base):  # type: ignore
     def __init__(self) -> None:
         super().__init__()
+        _apply_window_icon(self)
         self.lang = tk.StringVar(value="tr")
         self.theme = tk.StringVar(value="light")
         self._load_settings()
@@ -1306,5 +1400,7 @@ def _run_self_test(args: list[str]) -> int:
 if __name__ == "__main__":
     if len(sys.argv) >= 2 and sys.argv[1] == "--self-test":
         raise SystemExit(_run_self_test(sys.argv[2:]))
+    _set_app_user_model_id()
+    _ensure_start_menu_shortcut()
     app = App()
     app.mainloop()

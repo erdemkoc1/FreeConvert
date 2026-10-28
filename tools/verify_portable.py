@@ -14,6 +14,7 @@ REQUIRED = {
     "assets/fonts/NotoSans-Bold.ttf",
     "assets/fonts/NotoSans-Italic.ttf",
     "assets/fonts/OFL.txt",
+    "assets/icon/freeconvert.ico",
     "tesseract_runtime/tesseract.exe",
     "tesseract_runtime/tessdata/eng.traineddata",
     "tesseract_runtime/tessdata/tur.traineddata",
