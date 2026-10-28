@@ -9,9 +9,11 @@ program.
 
 ## Download
 
-Portable builds will be published on the
-[Releases page](https://github.com/erdemkoc1/FreeConvert/releases). Download
-`FreeConvert.exe` there and run it; no installation is required.
+- [⬇️ Download FreeConvert.exe](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/FreeConvert.exe) (119 MB)
+- [⬇️ Download uninstall.exe](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/uninstall.exe) (10 MB, removes FreeConvert)
+
+No installation is required. Download `FreeConvert.exe` and run it. All
+release versions are on the [Releases page](https://github.com/erdemkoc1/FreeConvert/releases).
 
 ## Features
 
