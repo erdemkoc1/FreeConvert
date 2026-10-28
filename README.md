@@ -9,8 +9,9 @@ program.
 
 ## Download
 
-- [⬇️ Download FreeConvert.exe](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/FreeConvert.exe) (119 MB)
-- [⬇️ Download uninstall.exe](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/uninstall.exe) (10 MB, removes FreeConvert)
+[![Download FreeConvert.exe](docs/download-exe.svg)](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/FreeConvert.exe)
+
+[![Download uninstall.exe](docs/download-uninstall.svg)](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/uninstall.exe)
 
 No installation is required. Download `FreeConvert.exe` and run it. All
 release versions are on the [Releases page](https://github.com/erdemkoc1/FreeConvert/releases).

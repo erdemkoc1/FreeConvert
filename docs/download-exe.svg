@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="72" viewBox="0 0 330 72" role="img" aria-label="Download FreeConvert.exe">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="328" height="70" rx="35" fill="url(#g)"/>
+  <rect x="1" y="1" width="328" height="70" rx="35" fill="none" stroke="#1D4ED8" stroke-width="2"/>
+  <g transform="translate(30 20)" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 2 V22"/>
+    <path d="M7 14 L16 23 L25 14"/>
+    <path d="M2 28 V31 Q2 32 3 32 H29 Q30 32 30 31 V28"/>
+  </g>
+  <text x="76" y="31" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">Download FreeConvert</text>
+  <text x="76" y="52" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#DBEAFE">Windows portable · FreeConvert.exe · 119 MB</text>
+</svg>
