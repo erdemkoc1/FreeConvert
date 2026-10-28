@@ -1,20 +1,18 @@
 # FreeConvert
 
-FreeConvert is a portable, offline Windows document converter with a Tkinter
-user interface. It is designed to run as a single `.exe` without installing
-Python, Microsoft Word, LibreOffice, OnlyOffice, Java, or a separate OCR
-program.
-
-![Supported conversions](docs/conversions.svg)
-
-## Download
-
 [![Download FreeConvert.exe](docs/download-exe.svg)](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/FreeConvert.exe)
 
 [![Download uninstall.exe](docs/download-uninstall.svg)](https://github.com/erdemkoc1/FreeConvert/releases/download/v1.0.0/uninstall.exe)
 
 No installation is required. Download `FreeConvert.exe` and run it. All
 release versions are on the [Releases page](https://github.com/erdemkoc1/FreeConvert/releases).
+
+FreeConvert is a portable, offline Windows document converter with a Tkinter
+user interface. It is designed to run as a single `.exe` without installing
+Python, Microsoft Word, LibreOffice, OnlyOffice, Java, or a separate OCR
+program.
+
+![Supported conversions](docs/conversions.svg)
 
 ## Features
 
