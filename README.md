@@ -5,6 +5,14 @@ user interface. It is designed to run as a single `.exe` without installing
 Python, Microsoft Word, LibreOffice, OnlyOffice, Java, or a separate OCR
 program.
 
+![Supported conversions](docs/conversions.svg)
+
+## Download
+
+Portable builds will be published on the
+[Releases page](https://github.com/erdemkoc1/FreeConvert/releases). Download
+`FreeConvert.exe` there and run it; no installation is required.
+
 ## Features
 
 - DOCX to PDF using python-docx + ReportLab
