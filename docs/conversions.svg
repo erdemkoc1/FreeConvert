@@ -14,8 +14,8 @@
     }
   </style>
 
-  <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700" class="ink">FreeConvert: hangi dönüşümler yapılabilir</text>
-  <text x="380" y="58" text-anchor="middle" font-size="13" class="muted">Girdi solda, çıktı sağda. Numaralar aşağıdaki listeye karşılık gelir.</text>
+  <text x="380" y="34" text-anchor="middle" font-size="22" font-weight="700" class="ink">FreeConvert: supported conversions</text>
+  <text x="380" y="58" text-anchor="middle" font-size="13" class="muted">Input on the left, output on the right. Numbers match the list below.</text>
 
   <g transform="translate(0,40)">
     <!-- Edges -->
@@ -37,10 +37,10 @@
     <text x="130" y="236" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">PDF</text>
     <circle cx="100" cy="278" r="11" fill="#f59e0b"/>
     <text x="100" y="278" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#0f172a">8</text>
-    <text x="118" y="278" dominant-baseline="central" font-size="12" class="muted">birleştir (çoklu PDF)</text>
+    <text x="118" y="278" dominant-baseline="central" font-size="12" class="muted">merge (multiple PDFs)</text>
 
     <rect x="40" y="332" width="180" height="56" rx="10" fill="#16a34a"/>
-    <text x="130" y="366" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Görsel (PNG / JPG)</text>
+    <text x="130" y="366" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Image (PNG / JPG)</text>
 
     <!-- Output nodes -->
     <rect x="540" y="35" width="180" height="50" rx="10" fill="#334155"/>
@@ -50,13 +50,13 @@
     <text x="630" y="155" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Word (.docx)</text>
 
     <rect x="540" y="215" width="180" height="50" rx="10" fill="#334155"/>
-    <text x="630" y="245" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Metin (.txt)</text>
+    <text x="630" y="245" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Text (.txt)</text>
 
     <rect x="540" y="305" width="180" height="50" rx="10" fill="#334155"/>
     <text x="630" y="335" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">PNG / JPG</text>
 
     <rect x="540" y="395" width="180" height="50" rx="10" fill="#334155"/>
-    <text x="630" y="425" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Metin (OCR)</text>
+    <text x="630" y="425" text-anchor="middle" font-size="15" font-weight="600" fill="#f8fafc">Text (OCR)</text>
 
     <!-- Edge number badges -->
     <g font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="central">
@@ -84,11 +84,11 @@
     </g>
     <text x="76" y="560" dominant-baseline="central">Word (.docx) → PDF</text>
     <text x="76" y="592" dominant-baseline="central">PDF → Word (.docx)</text>
-    <text x="76" y="624" dominant-baseline="central">PDF → Metin (.txt)</text>
-    <text x="76" y="656" dominant-baseline="central">PDF → Görseller (sayfa sayfa)</text>
-    <text x="436" y="560" dominant-baseline="central">Görsel → Görsel (PNG ↔ JPG)</text>
-    <text x="436" y="592" dominant-baseline="central">Görseller → PDF (birleştir)</text>
-    <text x="436" y="624" dominant-baseline="central">Görsel → Metin (OCR)</text>
-    <text x="436" y="656" dominant-baseline="central">PDF → PDF (birleştir)</text>
+    <text x="76" y="624" dominant-baseline="central">PDF → Text (.txt)</text>
+    <text x="76" y="656" dominant-baseline="central">PDF → Images (page by page)</text>
+    <text x="436" y="560" dominant-baseline="central">Image → Image (PNG ↔ JPG)</text>
+    <text x="436" y="592" dominant-baseline="central">Images → PDF (merge)</text>
+    <text x="436" y="624" dominant-baseline="central">Image → Text (OCR)</text>
+    <text x="436" y="656" dominant-baseline="central">PDF → PDF (merge)</text>
   </g>
 </svg>
